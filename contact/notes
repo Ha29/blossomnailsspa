@@ -1,0 +1,27 @@
+from django import forms
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from .models import Person
+
+class ContactForm(forms.Form):
+	fn = forms.CharField(required=True, max_length=20)
+	ln = forms.CharField(required=True, max_length=20)
+	email = forms.EmailField(required=True)
+	# person = Person(first_name = contact_first_name,
+	# 	last_name=contact_last_name, email=contact_email)
+	content = forms.CharField(
+		required=True,
+		widget=forms.Textarea)
+
+	def clean(self):
+		cleaned_data = super(ContactForm, self).clean()
+		name = cleaned_data.get('fn')
+		email = cleaned_data.get('ln')
+		message = cleaned_data.get('content')
+	def clean_recipient(self):
+		
+		try:
+			validate_email(contact_email)
+			return True
+		except ValidationError:
+			return False
