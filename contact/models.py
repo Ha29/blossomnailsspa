@@ -1,12 +1,12 @@
 from django.db import models
-
+import uuid
 # Create your models here.
 
 class Person(models.Model):
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=20)
-	email = models.EmailField(max_length=20)
-	is_admin = models.BooleanField()
+	email = models.EmailField(primary_key=True, max_length=20)
+	is_admin = models.BooleanField(default=False)
 
 """
 All the object foreign keys use on_delete=models.PROTECT because
@@ -22,21 +22,24 @@ class PrivateSuggestion(models.Model):
 	suggestion = models.CharField(max_length=200)
 	pub_date = models.DateTimeField('date published')
 	person = models.ForeignKey(Person, on_delete=models.PROTECT)
+	# number = models.IntegerField(on_de)
 
-class PrivateResponse(models.Model):
-	suggestion = models.ForeignKey(PrivateSuggestion, on_delete=models.PROTECT)
-	answer_text = models.CharField(max_length=200)
-	person = models.ForeignKey(Person, on_delete=models.PROTECT)
-	res_date = models.DateTimeField('response date')
+# class PrivateResponse(models.Model):
+# 	suggestion = models.ForeignKey('PrivateSuggestion', 
+# 		on_delete=models.PROTECT, blank=True, null=True)
+# 	answer_text = models.CharField(max_length=200)
+# 	person = models.ForeignKey('Person',
+# 		on_delete=models.PROTECT, blank=True, null=True)
+# 	res_date = models.DateTimeField('response date')
 
-class PublicQuestion(models.Model):
-	question_text = models.CharField(max_length=100)
-	pub_date = models.DateTimeField('date published')
-	person = models.ForeignKey(Person, on_delete=models.PROTECT)
+# class PublicQuestion(models.Model):
+# 	question_text = models.CharField(max_length=100)
+# 	pub_date = models.DateTimeField('date published')
+# 	person = models.ForeignKey(Person, on_delete=models.PROTECT)
 
-class PublicAnswer(models.Model):
-	public_question = models.ForeignKey(PublicQuestion, models.PROTECT)
-	answer_text = models.CharField(max_length=100)
-	pub_date = models.DateTimeField('date published')
-	person = models.ForeignKey(Person, on_delete=models.PROTECT)
+# class PublicAnswer(models.Model):
+# 	public_question = models.ForeignKey(PublicQuestion, models.PROTECT)
+# 	answer_text = models.CharField(max_length=100)
+# 	pub_date = models.DateTimeField('date published')
+# 	person = models.ForeignKey(Person, on_delete=models.PROTECT)
 
