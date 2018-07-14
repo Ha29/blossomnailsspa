@@ -120,6 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STACTICFILES_DIRS = (
+STACTIC_FILES_DIRS = (
     ('assets', os.path.join(PROJECT_DIR, '../static'))
 )
