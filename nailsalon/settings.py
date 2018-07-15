@@ -25,7 +25,7 @@ SECRET_KEY = 'tbgev)&hud&(b!4k$$f_ed27efgmy(2-b07&7v&p(r(=wxd9^6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tiem-nail.herokuapp.com']
+ALLOWED_HOSTS = ['tiem-nail.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

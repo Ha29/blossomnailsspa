@@ -1,5 +1,36 @@
+<html>
+<head>
+<title> Contact Us </title>
+<style> #map {
+	height: 400px;
+	width: 75%;
+}
+</style>
+</head>
+
+<body>
+<h1> Our Location </h1>
+<div id="map"></div>
+<script>
+function initMap() {
+	var loc = {lat: 42.592754, lng: -83.127548}
+	var map = new google.maps.Map(
+		document.getElementById('map'), {zoom:4, center: loc});
+	var marker = new google.maps.Marker({position: loc, map: map});
+}
+</script>
+
+<script async defer
+src = "https://maps.googleapis.com/maps/api/
+?key=AIzaSyAzJwhqEIx_amG4PFLhLY82zd9DI0yNUFs&callback=initMap">
+</script>
+
+<h1> Contact Us </h1>
 <form method = "post">
 	{% csrf_token %}
 	{{ form.as_p }}
 	<input type="submit" value="Send message" />
 </form>
+</body>
+
+</html>
