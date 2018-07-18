@@ -15,8 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from home import views
+# from django.http import HttpResponseNotFound
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', include('contact.urls'))
+    path('contact/', include('contact.urls')),
+    path('home/', include('home.urls')),
+    path('', include('home.urls')),
 ]
+
+handler404 = views.handler404
+handler505 = views.handler505
+handler500 = views.handler500
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('contact/', include('contact.urls')),
+#     path('', Home.as_view(), name="home"),
+#     path('home/', include('home.urls'))
+# ]
