@@ -1,48 +1,54 @@
-/* Dropdown Button */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+.menubutton {
+    float: left;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+.fbbutton {
+    float: right;
+    transform: scale(0.5, 0.5);
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.wordsNext {
+    float: right;
+    text-align: right;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.btn {
+    background-color: #EF9A9A;
+    height: 50px;
+    width: 50px;
+    border: groove;
+}
+.btn:hover {
+    background-color: #E53935;
+}
+.btncontents {
     display: none;
-    position: absolute;
+    /*position: absolute;*/
+    border-style: groove;
     background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
+.btncontents a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    border-style: groove;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.btnshow {
+    display: block;
+}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.wordsNext {
+    float:right;
+}
 
 h1 {
-    color: blue;
+    text-align: center;
+    top: 100px;
+    left: 50px;
 }
+
+

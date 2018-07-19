@@ -1,7 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/styles.css' %}" />
 
-<script> 
+<!-- <script> 
 	function myFunction() {
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
@@ -18,24 +18,29 @@
 	// 		}
 	// 	}
 	// }
+	// window.onclick = function(event)
+
+
+</script> -->
+
+<script> 
+	function myFunc() {
+		document.getElementById("contents").classList.toggle("btnshow");
+	};
+
+	window.onclick = function(event) {
+		if (!event.target.matches('.btn')) {
+			var btnstuff = document.getElementById("contents");
+			btnstuff.classList.remove("btnshow");
+			// console.log("True")
+		}
+	};
 </script>
 
 <html>
 <head>
-
-<title> Blossom Nails Spa Home </title>
-
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">MENU</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="/home/">Home</a>
-    <a href="/specials/">Specials</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</div>
-
-<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.js"> </script>
-
+	<title> Blossom Nails Spa Home </title>
+	<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.js"> </script>
 
 </head>
 
@@ -43,6 +48,17 @@
 	<h1>
 		Testing in progress
 	</h1>
+	<div class=buttonholder>
+		<div class="menubutton">
+		<button onclick="myFunc()" class="btn">MENU</button>
+			<div id="contents" class="btncontents">
+			<a href="/home/">Home</a>
+			<a href="/specials/">Specials</a>
+			<a href="/contact/">Contact</a>
+			</div> 
+		</div>
+		<a class="fbbutton" title="follow me on facebook" href="http://www.facebook.com"><img alt="find us on fb" src="https://c866088.ssl.cf3.rackcdn.com/assets/badgefacebook.png" border=0></a>
+	</div>
 </body>
 
 </html>
