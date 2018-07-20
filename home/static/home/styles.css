@@ -1,10 +1,39 @@
 .menubutton {
     float: left;
+    height: 1px;
 }
 
-.fbbutton {
+.buttonholder {
+    height: 5px
+}
+
+.buttonholder img {
+    width: 50%;
+    height: auto;
+}
+
+.fb_div {
     float: right;
-    transform: scale(0.5, 0.5);
+    width: auto;
+    height: 10px;
+}
+
+.fb_div img {
+    width: 50%;
+    height: auto;
+    padding-left: 20px;
+}
+
+.insta_div {
+    float: right;
+    width: auto;
+    height: 10px;
+}
+
+.insta_div img {
+    float: right;
+    width: 10%;
+    height: auto;
 }
 
 .wordsNext {

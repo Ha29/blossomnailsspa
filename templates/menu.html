@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}" />
+
+<script> 
+	function myFunc() {
+		document.getElementById("contents").classList.toggle("btnshow");
+	};
+
+	window.onclick = function(event) {
+		if (!event.target.matches('.btn')) {
+			var btnstuff = document.getElementById("contents");
+			btnstuff.classList.remove("btnshow");
+			// conso}le.log("True")
+		}
+	};
+	// (function () {
+	// var img = document.getElementById("insta_button");
+	// img.onload = function() {
+	// 	img.height='50%';
+	// 	img.width='auto';
+	// };
+	// }());
+</script>
+
+<html>
+<body>
+	<div class="buttonholder">
+		<div class="menubutton">
+		<button onclick="myFunc()" class="btn">MENU</button>
+			<div id="contents" class="btncontents">
+			<a href="/home/">Home</a>
+			<a href="/specials/">Specials</a>
+			<a href="/contact/">Contact</a>
+			</div> 
+		</div>
+		<div class="fb_div">
+			<a class="fbbutton" title="follow me on facebook" href="http://www.facebook.com">{% load staticfiles %}<img src="{% static 'home/fb_logo.png' %}"></a>
+		</div>
+		<div class="insta_div">
+			<a class="instabutton" title="follow me on instagram" href="http://www.instagram.com"> {% load staticfiles %}<img id="insta_button" src="{% static 'home/insta_logo.png' %}"></a>
+		</div>
+	</div>
+</body>
+
+</html>
