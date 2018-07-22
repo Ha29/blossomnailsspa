@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/contact/contact.css' %}" />
+
 {% include "menu.html" %}
 
 <!DOCTYPE html>
@@ -6,46 +9,64 @@
 <title> Contact Us </title>
 <style> #map {
 	position: relative;
-	height: 400px;
+	height: 300px;
 	width: 75%;
+	margin-left: auto;
+	margin-right:auto;
 	z-index: 1;
 }
 </style>
 </head>
 
 <body>
-<h1> Our Location </h1>
-<div id="map"></div>
-<script>
-function initMap() {
-	
-	var loc = {lat: 42.592754, lng: -83.127548}
-	var map = new google.maps.Map(
-		document.getElementById('map'), {zoom:14, center: loc});
-	var marker = new google.maps.Marker({position: loc, map: map});
-	var contentString = '<p> Blossom Nails Spa </p>' + 
-		'<p> 1057B East Long Lake Rd </p>' +
-		'<p> Troy, MI 48085 </p>';
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
-	});
-	marker.addListener('mouseover', function() {
-		infowindow.open(map, marker);
-	});
-}
-</script>
+	<div id="relative">
+	<div id="background"> 
+	</div>
+	<div id="body-contents">
+		<!-- Move everything in here -->
+		<h1> Our Location </h1>
+		<div id="map"></div>
+		<script>
+		function initMap() {
+			var loc = {lat: 42.592754, lng: -83.127548}
+			var map = new google.maps.Map(
+			document.getElementById('map'), {zoom:14, center: loc});
+			var marker = new google.maps.Marker({position: loc, map: map});
+			var contentString = '<p> Blossom Nails Spa </p>' + 
+				'<p> 1057B East Long Lake Rd </p>' +
+				'<p> Troy, MI 48085 </p>';
+			var infowindow = new google.maps.InfoWindow({
+			content: contentString});
+			marker.addListener('mouseover', function() {
+			infowindow.open(map, marker);});
+		}
+		</script>
 
-<script async defer
-src = "https://maps.googleapis.com/maps/api/
-js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
-</script>
+		<script async defer
+		src = "https://maps.googleapis.com/maps/api/
+		js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
+		</script>
 
-<h1> Contact Us </h1>
-<form method = "post">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Send message" />
-</form>
+		<h1> Contact Us </h1>
+		<form method = "post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Send message" />
+		</form>
+	</div>
+	</div>
+<style>
+	#background {
+		background-image: url("{% static '/contact/images/blossom.jpg' %}");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center center;
+		min-height: 100vh;
+		height: 100%;
+		width: 100%;
+		opacity: 0.5;
+	}
+</style>
 </body>
 
 </html>

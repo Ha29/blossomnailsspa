@@ -5,8 +5,11 @@
 }
 
 .buttonholder {
-    height: 5px;
+    /*height: 40px;
     padding-bottom: 30px;
+    z-index: 200;
+    background: white;*/
+    /* Refer to menu.html to change size*/
 }
 
 .buttonholder img {

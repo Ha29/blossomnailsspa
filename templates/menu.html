@@ -1,5 +1,4 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}" />
 
 <script> 
 	function myFunc() {
@@ -23,23 +22,36 @@
 </script>
 
 <html>
+
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}" />
+	{% block extrahead %}{% endblock %}
+</head>
+
 <body>
 	<div class="buttonholder">
 		<div class="menubutton">
-		<button onclick="myFunc()" class="btn">MENU</button>
-			<div id="contents" class="btncontents">
-			<a href="/home/">Home</a>
-			<a href="/specials/">Specials</a>
-			<a href="/contact/">Contact</a>
-			</div> 
+			<button onclick="myFunc()" class="btn">MENU</button>
+				<div id="contents" class="btncontents">
+					<a href="/home/">Home</a>
+					<a href="/specials/">Specials</a>
+					<a href="/contact/">Contact</a>
+				</div> 
 		</div>
 		<div class="fb_div">
-			<a class="fbbutton" title="follow me on facebook" href="http://www.facebook.com">{% load staticfiles %}<img src="{% static 'home/fb_logo.png' %}"></a>
+			<a class="fbbutton" title="follow me on facebook" href="http://www.facebook.com">{% load staticfiles %}<img src="{% static 'fb_logo.png' %}"></a>
 		</div>
 		<div class="insta_div">
-			<a class="instabutton" title="follow me on instagram" href="http://www.instagram.com"> {% load staticfiles %}<img id="insta_button" src="{% static 'home/insta_logo.png' %}"></a>
+			<a class="instabutton" title="follow me on instagram" href="http://www.instagram.com"> {% load staticfiles %}<img id="insta_button" src="{% static 'insta_logo.png' %}"></a>
 		</div>
 	</div>
+<style>
+	.buttonholder {
+		height: 30px;
+		background: white;
+	}
+</style>
 </body>
 
 </html>
