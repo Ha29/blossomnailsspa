@@ -57,12 +57,14 @@
 	</div>
 <style>
 	#background {
-		background-image: url("{% static '/contact/images/blossom.jpg' %}");
+		/*background-image: url("{% static '/contact/images/blossom.jpg' %}");*/
+		background: url("{% static '/contact/images/blossom.jpg'%}") no-repeat fixed;
 		background-size: cover;
+		background-repeat: no-repeat;
 		background-attachment: fixed;
-		background-position: center center;
-		min-height: 100vh;
-		height: 100%;
+		background-position: 100% 100%;
+		min-height: 150vh;
+		/*height: 100%;*/
 		width: 100%;
 		opacity: 0.5;
 	}
