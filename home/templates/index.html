@@ -5,31 +5,38 @@
 
 <html>
 
+
 <head>
-	<!-- {% block extrahead %} -->
-		<!-- <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" /> -->
-	<!-- {% endblock %} -->
 	<title>
 		Blossom Nails Spa Home
 	</title>
 </head>
 
-<body>
-	<!-- <div style="position:relative; ">      
-      <div style=" background-image:url("{% static 'home/images/blossoms.jpg'%}"); opacity:0.5; filter:alpha(opacity=40);height:520px; width:520px;"></div>
-
-       <div style="position:absolute; top:10px; z-index:100;left:10px;height:500px;width:500px;">
-            Your Div Contents are  Here..................
-       </div>
-    </div> -->
+<body onload=slide()>
     <div id="relative"> 
     	<div id="background">
 
     	</div>
     	<div id="body-contents">
-    		<h1> WELCOME </h1>
+    		<div id="intro">
+    			<p id="title"> Blossom Nails & Spa </p>
+    			<p id="description"> The Perfect Nails Spa in Troy </p>
+    			<p id="number"> Call Today: 248-817-6663 </p>
+    			<p id="message"> Appointment Preferred </h1>
+    			<p id = "message"> Walk-Ins Welcome!!!</h1>
+    		</div>
+    		<div id="carousel">
+    			{% for src_name in src_names %}
+    			{% load staticfiles %}
+    			<img class="caro-image" 
+    			src={% static src_name %}> 
+    			{% endfor %}
+    			<button class="left-button" onclick="changeImage(-1)">&#10094;</button>
+    			<button class="right-button" onclick="changeImage(1)"> &#10095;</button>
+    		</div>
     	</div>
     </div>
+
 
 	<style> 
 		#background {
@@ -43,6 +50,55 @@
 		}
 	</style>
 </body>
+<script>
+var slideIndex = 0;
+var slides = document.getElementsByClassName("caro-image")
+var automatic;
+var timer;
+var debugging_clock = setInterval(print, 1000)
+automate();
+
+function slide() {
+	var i;
+	clearImages();
+	slideIndex++;
+	displayImage();
+};
+
+function clearImages() {
+	var slides = document.getElementsByClassName("caro-image")
+	for (i=0; i < slides.length; i++){
+		slides[i].style.display = "none"
+	}
+}
+
+function displayImage() {
+	if (slideIndex > slides.length) { slideIndex = 1}
+	if (slideIndex < 1) { slideIndex = 17}
+	slides[slideIndex-1].style.display= "block"
+	// console.log(slideIndex-1);
+}
+
+function automate() {
+	automatic = setInterval(slide, 3000);
+}
+
+function print() {
+	console.log("a second has passed by");
+}
+
+function changeImage(i) {
+	clearTimeout(timer);
+	clearInterval(automatic);
+	slideIndex += i;
+	clearImages();
+	displayImage();
+	timer = setTimeout(automate, 5000);
+}
+
+
+
+</script>
 
 </html>
 

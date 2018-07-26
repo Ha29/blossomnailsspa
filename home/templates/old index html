@@ -1,0 +1,50 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/home/index.css' %}" />
+
+{% include "menu.html" %}
+
+<html>
+
+<head>
+	<!-- {% block extrahead %} -->
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" /> -->
+	<!-- {% endblock %} -->
+	<title>
+		Blossom Nails Spa Home
+	</title>
+</head>
+
+<body>
+	<!-- <div style="position:relative; ">      
+      <div style=" background-image:url("{% static 'home/images/blossoms.jpg'%}"); opacity:0.5; filter:alpha(opacity=40);height:520px; width:520px;"></div>
+
+       <div style="position:absolute; top:10px; z-index:100;left:10px;height:500px;width:500px;">
+            Your Div Contents are  Here..................
+       </div>
+    </div> -->
+    <div id="relative"> 
+    	<div id="background">
+
+    	</div>
+    	<div id="body-contents">
+    		<h1> WELCOME </h1>
+    	</div>
+    </div>
+
+	<style> 
+		#background {
+			background-image:url("{% static 'home/images/blossoms.jpg'%}");
+			opacity: 0.5;
+			width: 100%;
+			height: 100%;
+			background-size:cover;
+			background-attachment: fixed;
+			min-height: 150vh;
+		}
+	</style>
+</body>
+
+</html>
+
+
+
