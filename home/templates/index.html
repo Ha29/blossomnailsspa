@@ -26,6 +26,7 @@
     			<p id = "message"> Walk-Ins Welcome!!!</h1>
     		</div>
     		<div id="carousel">
+    			
     			{% for src_name in src_names %}
     			{% load staticfiles %}
     			<img class="caro-image" 
@@ -33,6 +34,14 @@
     			{% endfor %}
     			<button class="left-button" onclick="changeImage(-1)">&#10094;</button>
     			<button class="right-button" onclick="changeImage(1)"> &#10095;</button>
+    			
+    		</div>
+    		<div id = "contents">
+    			{% for index, line in contents %}
+    			<p id={{index}}>
+    				{{line}}
+    			</p>
+    			{% endfor %}
     		</div>
     	</div>
     </div>
@@ -46,7 +55,8 @@
 			height: 100%;
 			background-size:cover;
 			background-attachment: fixed;
-			min-height: 150vh;
+			min-height: 200vh;
+			margin: 0 ;
 		}
 	</style>
 </body>

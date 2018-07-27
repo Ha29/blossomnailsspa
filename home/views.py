@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+import json
 
 app_name = "home"
 # Create your views here.
@@ -12,9 +13,11 @@ def index(request):
 	for i in range(1, 18):
 		string = 'home/images/' + str(i) + '.jpg'
 		names.append(string)
-	return render(request, 'index.html', {'src_names': names})
+	list_data = get_data_in_list('static/home.json')
+	return render(request, 'index.html', {'src_names': names, 'contents': list_data})
 
 def services(request):
+	list_data = get_data_in_list('static/services.json')
 	return render(request, 'services.html')
 
 def gallery(request):
@@ -28,6 +31,12 @@ def handler505(request):
 
 def handler500(request):
 	return HttpResponseRedirect("/")
+
+def get_data_in_list(path):
+	data = open(path).read()
+	jsonData = json.loads(data)
+	list_data = [line.strip('\n') for line in jsonData['contents']]
+	return enumerate(list_data)
 
 
 
