@@ -122,6 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/images")
 ]
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
