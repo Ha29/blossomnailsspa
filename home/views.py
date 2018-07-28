@@ -14,11 +14,13 @@ def index(request):
 		string = 'home/images/' + str(i) + '.jpg'
 		names.append(string)
 	list_data = get_data_in_list('static/home.json')
-	return render(request, 'index.html', {'src_names': names, 'contents': list_data})
+	return render(request, 'index.html', \
+		{'src_names': names, 'contents': list_data})
 
 def services(request):
 	list_data = get_data_in_list('static/services.json')
-	return render(request, 'services.html')
+	return render(request, 'services.html', \
+		{'contents': list_data})
 
 def gallery(request):
 	return render(request, 'gallery.html')

@@ -5,7 +5,8 @@ from .models import Person
 
 class ContactForm(forms.Form):
 	fn = forms.CharField(required=True, max_length=20, 
-		widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
+		widget=forms.TextInput(\
+			attrs={'placeholder': 'First Name', 'class': 'form'}))
 	ln = forms.CharField(required=True, max_length=20, 
 		widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
 	email = forms.EmailField(required=True, max_length=254, 

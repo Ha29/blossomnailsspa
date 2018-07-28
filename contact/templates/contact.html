@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static '/contact/contact.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'contact/contact.css' %}" />
 
 {% include "menu.html" %}
 
@@ -20,8 +20,7 @@
 
 <body>
 	<div id="relative">
-	<div id="background"> 
-	</div>
+	<div id="background"> </div>
 	<div id="body-contents">
 		<!-- Move everything in here -->
 		<h1> Our Location </h1>
@@ -46,12 +45,43 @@
 		src = "https://maps.googleapis.com/maps/api/
 		js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
 		</script>
-
 		<h1> Contact Us </h1>
 		<form method = "post">
 		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Send message" />
+		<div class= "formFields">
+			<!-- <ul class="fields">
+				<li id="fn" class="contact">{{form.fn}}</li>
+				<li id="ln" class="contact">{{form.ln}}</li>
+				<li id="email" class="contact">{{form.email}}</li>
+				<li id="content"class="contact">{{form.content}}</li>
+			</ul> -->
+
+			<!--<div class="block">
+				<label>First Name:</label>
+				<p> {{form.fn}} </p>
+			</div>
+			<div class="block">
+				<label>Last Name:</label>
+				<p> {{form.ln}} </p>
+			</div>
+			<div class="block">
+				<label>Email:</label>
+				<p> {{form.email}} </p>
+			</div>
+			<div class="block">
+				<label>Content:</label>
+				<p> {{form.content}} </p>
+			</div> -->
+			<div class="form-block">
+				{{form.as_p}}
+			</div>
+			<div class="form-names">
+				{{form.as_p}}
+			</div>
+			<input class="sub-button" type="submit" value="Send message" />
+		</div>
+		
+		
 		</form>
 	</div>
 	</div>

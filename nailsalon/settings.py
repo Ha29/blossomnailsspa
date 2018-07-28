@@ -125,4 +125,4 @@ STATICFILES_DIRS = [
 ]
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = "allstatic/"
+STATIC_ROOT = 'allstatic/'

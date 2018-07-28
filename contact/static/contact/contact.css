@@ -10,3 +10,51 @@
 #relative {
 	position: relative;
 }
+
+.formFields {
+	position: relative;
+}
+
+.form-block p label {
+	display: none;
+	/*position: absolute;*/
+	/*float: left;*/
+}
+
+.form-block p input {
+	float: left;
+	/*position: absolute;*/
+	width: 334px;
+	margin-bottom: 5px;
+}
+
+.form-block {
+	display: inline-block;
+	position: absolute;
+}
+
+.form-names {
+	display: block;
+	position: absolute;
+}
+
+.form-names p label {
+	float: left;
+	text-align: right;
+	display: block;
+	width: 35vw;
+	margin-bottom: 8px;
+	/*position: absolute;*/
+}
+
+.form-names p input {
+	display: none;
+	/*position: absolute;*/
+}
+.form-names p textarea {
+	display: none;
+}
+.sub-button {
+	top: 300px;
+	position: relative;
+}
