@@ -1,0 +1,20 @@
+
+
+#body-contents {
+	text-align: center;
+	position: absolute;
+	top: 10px;
+	z-index: 98;
+	left: 10px;
+	height: 100%;
+	width: 100%
+}
+#relative {
+	position: relative;
+}
+
+h1 {
+	display: inline;
+	color: purple;	
+	text-align: center;
+}
