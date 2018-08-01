@@ -1,4 +1,5 @@
 {% load static %}
+{% load staticfiles %}
 
 <script> 
 	function myFunc() {
@@ -25,6 +26,8 @@
 
 
 <head>
+
+	<link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'background.css' %}" />
 	{% block extrahead %}{% endblock %}
