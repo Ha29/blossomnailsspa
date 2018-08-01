@@ -1,0 +1,70 @@
+#body-contents {
+	margin: 0 auto;
+	/*align: center;*/
+}
+
+#carousel {
+	width: 100px
+	height: 200vh;
+	margin: 0 auto;
+	position: relative;
+}
+
+#contents {
+	margin-top: 50px;
+	/*padding: 200px;*/
+	margin: 0 auto;
+}
+
+.caro-image {
+	position: relative;
+	height: 50vh;
+	/*max-width: 75%;*/
+	display: none;
+	text-align: center;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.left-button {
+	position: absolute;
+    top: 50%;
+	left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.right-button {
+	position: absolute;
+	top: 50%;
+	right: 0%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+body {
+	height: 100%;
+	/*display: inline-block;*/
+	margin: 0 auto;
+}
+
+html {
+	height: 100%;
+}
