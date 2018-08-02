@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.db.utils import ProgrammingError
 
 from django.views.generic.edit import FormView
 from django.views import generic
@@ -50,7 +51,7 @@ def function(request):
 				person = Person.objects.get(pk=email)
 				person.first_name = fn
 				person.last_name = ln
-			except Person.DoesNotExist:
+			except (Person.DoesNotExist, ProgrammingError) as error:
 				person = Person(first_name=fn, last_name=ln, email=email)
 			person.save()
 			suggestion = PrivateSuggestion(suggestion=content, 
