@@ -36,9 +36,12 @@ def function(request):
 	# 		return HttpResponse('Error!')
 	# context = {'form': form}
 	# return render(request, 'contact.html', context)
+	print("contact-form")
 	if request.method == 'POST':
+		print("post-request")
 		form = ContactForm(request.POST)
 		if form.is_valid():
+			print("valid!")
 			fn = request.POST.get('fn')
 			ln = request.POST.get('ln')
 			email = request.POST.get('email')
@@ -54,6 +57,9 @@ def function(request):
 				pub_date=datetime.datetime.now(), person=person)
 			suggestion.save()
 			return HttpResponse('thank you')
+		print("invalid")
 	else:
+		print("still in contact form")
 		form = ContactForm()
+	print("render with old information")
 	return render(request, 'contact.html', {'form': form})

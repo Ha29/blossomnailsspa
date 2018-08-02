@@ -46,42 +46,15 @@
 		js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
 		</script>
 		<h1> Contact Us </h1>
-		<form method = "post">
-		{% csrf_token %}
-		<div class= "formFields">
-			<!-- <ul class="fields">
-				<li id="fn" class="contact">{{form.fn}}</li>
-				<li id="ln" class="contact">{{form.ln}}</li>
-				<li id="email" class="contact">{{form.email}}</li>
-				<li id="content"class="contact">{{form.content}}</li>
-			</ul> -->
-
-			<!--<div class="block">
-				<label>First Name:</label>
-				<p> {{form.fn}} </p>
-			</div>
-			<div class="block">
-				<label>Last Name:</label>
-				<p> {{form.ln}} </p>
-			</div>
-			<div class="block">
-				<label>Email:</label>
-				<p> {{form.email}} </p>
-			</div>
-			<div class="block">
-				<label>Content:</label>
-				<p> {{form.content}} </p>
-			</div> -->
-			<div class="form-block">
-				{{form.as_p}}
-			</div>
-			<div class="form-names">
-				{{form.as_p}}
-			</div>
-			<input class="sub-button" type="submit" value="Send message" />
-		</div>
 		
-		
+		<form method="post" action="">
+			{% csrf_token %}
+			<div class= "formFields">
+				<div class="form-block">
+					{{ form.as_p }}
+					<input type="submit" value="Submit" />
+				</div>
+			</div>
 		</form>
 	</div>
 	</div>

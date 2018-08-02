@@ -15,13 +15,12 @@ are deleted. For example, deleting an answer should not delete the
 question that the answer was placed on it. Deleting a Question should
 not delete the person that asked the question. 
 """
-class Choice(models.Model):
-	text = ["Private", "Public"]
 
 class PrivateSuggestion(models.Model):
 	suggestion = models.CharField(max_length=200)
 	pub_date = models.DateTimeField('date published')
 	person = models.ForeignKey(Person, on_delete=models.PROTECT)
+	
 	# number = models.IntegerField(on_de)
 
 # class PrivateResponse(models.Model):
