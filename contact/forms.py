@@ -15,7 +15,7 @@ class ContactForm(forms.Form):
 	# person = Person(first_name = contact_first_name,
 	# 	last_name=contact_last_name, email=contact_email)
 	content = forms.CharField(
-		required=True,
+		required=True, max_length=500, \
 		widget=forms.Textarea(
 			attrs={'placeholder': 'Write your suggestion here'}))
 

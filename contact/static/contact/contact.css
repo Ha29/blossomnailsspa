@@ -22,15 +22,17 @@
 }
 
 .form-block p input {
-	float: left;
+	float: right;
 	/*position: absolute;*/
 	width: 334px;
+	/*left: -500px;*/
 	margin-bottom: 5px;
 }
 
 .form-block {
 	display: inline-block;
 	position: absolute;
+	left: 40vw;
 }
 
 .form-names {
@@ -38,14 +40,13 @@
 	position: absolute;
 }
 
-.form-names p label {
+/*.form-names p label {
 	float: left;
 	text-align: right;
 	display: block;
 	width: 35vw;
 	margin-bottom: 8px;
-	/*position: absolute;*/
-}
+}*/
 
 .form-names p input {
 	display: none;
