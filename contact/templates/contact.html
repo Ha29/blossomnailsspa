@@ -18,7 +18,16 @@
 </style>
 </head>
 
-<body>
+<script>
+	function form_accepted() {
+		var accepted = '{{ accepted }}';
+		if (accepted == 1) {
+			alert("Your response has been recorded. Thank you!");
+		} 
+	}
+</script>
+
+<body onload="form_accepted()"">
 	<div id="relative">
 	<div id="background"> </div>
 	<div id="body-contents">

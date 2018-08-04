@@ -57,10 +57,11 @@ def function(request):
 			suggestion = PrivateSuggestion(suggestion=content, 
 				pub_date=datetime.datetime.now(), person=person)
 			suggestion.save()
-			return HttpResponse('thank you')
+			new_form = ContactForm()
+			return render(request, 'contact.html', {'form': new_form, 'accepted': 1})
 		print("invalid")
 	else:
 		print("still in contact form")
 		form = ContactForm()
 	print("render with old information")
-	return render(request, 'contact.html', {'form': form})
+	return render(request, 'contact.html', {'form': form, 'accepted': 0})
