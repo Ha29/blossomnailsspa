@@ -133,7 +133,8 @@ STATICFILES_DIRS = [
 ]
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'allstatic/'
+# STATIC_ROOT = 'allstatic/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'allstatic')
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
