@@ -139,8 +139,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-django_heroku.settings(locals())
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# django_heroku.settings(locals())
 
 # SECURE_HSTS_SECONDS = 3600
 # SECURE_HSTS_PRELOAD = True
