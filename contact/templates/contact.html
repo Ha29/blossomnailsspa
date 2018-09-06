@@ -1,0 +1,86 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'contact/contact.css' %}" />
+
+{% include "menu.html" %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Contact Us </title>
+<style> #map {
+	position: relative;
+	height: 300px;
+	width: 75%;
+	margin-left: auto;
+	margin-right:auto;
+	z-index: 1;
+}
+</style>
+</head>
+
+<script>
+	function form_accepted() {
+		var accepted = '{{ accepted }}';
+		if (accepted == 1) {
+			alert("Your response has been recorded. Thank you!");
+		} 
+	}
+</script>
+
+<body onload="form_accepted()"">
+	<div id="relative">
+	<div id="background"> </div>
+	<div id="body-contents">
+		<!-- Move everything in here -->
+		<h1> Our Location </h1>
+		<div id="map"></div>
+		<script>
+		function initMap() {
+			var loc = {lat: 42.592754, lng: -83.127548}
+			var map = new google.maps.Map(
+			document.getElementById('map'), {zoom:14, center: loc});
+			var marker = new google.maps.Marker({position: loc, map: map});
+			var contentString = '<p> Blossom Nails Spa </p>' + 
+				'<p> 1057B East Long Lake Rd </p>' +
+				'<p> Troy, MI 48085 </p>';
+			var infowindow = new google.maps.InfoWindow({
+			content: contentString});
+			marker.addListener('mouseover', function() {
+			infowindow.open(map, marker);});
+		}
+		</script>
+
+		<script async defer
+		src = "https://maps.googleapis.com/maps/api/
+		js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
+		</script>
+		<h1> Contact Us </h1>
+		
+		<form method="post" action="">
+			{% csrf_token %}
+			<div class= "formFields">
+				<div class="form-block">
+					{{ form.as_p }}
+					<input type="submit" value="Submit" />
+				</div>
+			</div>
+		</form>
+	</div>
+	</div>
+<style>
+	#background {
+		/*background-image: url("{% static '/contact/images/blossom.jpg' %}");*/
+		background: url("{% static '/contact/images/blossom.jpg'%}") no-repeat fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: 100% 100%;
+		min-height: 300vh;
+		/*height: 100%;*/
+		width: 100%;
+		opacity: 0.5;
+	}
+</style>
+</body>
+
+</html>

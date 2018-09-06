@@ -1,0 +1,61 @@
+#body-contents {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 98;
+	top: 10px;
+	left:10px;
+}
+
+#relative {
+	position: relative;
+}
+
+.formFields {
+	position: relative;
+}
+
+.form-block p label {
+	display: none;
+	/*position: absolute;*/
+	/*float: left;*/
+}
+
+.form-block p input {
+	float: right;
+	/*position: absolute;*/
+	width: 334px;
+	/*left: -500px;*/
+	margin-bottom: 5px;
+}
+
+.form-block {
+	display: inline-block;
+	position: absolute;
+	left: 40vw;
+}
+
+.form-names {
+	display: block;
+	position: absolute;
+}
+
+/*.form-names p label {
+	float: left;
+	text-align: right;
+	display: block;
+	width: 35vw;
+	margin-bottom: 8px;
+}*/
+
+.form-names p input {
+	display: none;
+	/*position: absolute;*/
+}
+.form-names p textarea {
+	display: none;
+}
+.sub-button {
+	top: 300px;
+	position: relative;
+}
