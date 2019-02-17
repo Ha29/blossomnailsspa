@@ -4,8 +4,10 @@
 
 }
 
-.navbar-toggle {
-    display: block;
+
+.fixedTop {
+  top: 0;
+  margin: 0 !important;
 }
 
 .buttonholder {
