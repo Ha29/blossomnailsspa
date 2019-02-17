@@ -4,6 +4,10 @@
 
 }
 
+.navbar-toggle {
+    display: block;
+}
+
 .buttonholder {
     /*height: 40px;
     padding-bottom: 30px;
