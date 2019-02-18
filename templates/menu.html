@@ -32,7 +32,7 @@
 </head>
 
 <body>
-	<!-- <nav class="navbar navbar fixed-top navbar-expand navbar-light bg-light">
+	<nav class="navbar navbar fixed-top navbar-expand navbar-light bg-light" role = "navigation">
   <a id = "brand" class="navbar-brand">
   	{% load staticfiles %}
 	<img src="{% static 'dao_logo.jpg' %}" onclick="myFunc()" height = "50" class="d-inline-block align-top">
@@ -55,7 +55,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/services/">Services</a>
       </li>
-      <li class="nav-item justify-content-end">
+      <li class="nav-item">
         <a class="nav-link" href="/contact/">Contact</a>
       </li>
     </ul>
@@ -68,27 +68,8 @@
     	</li>
     </ul>
   </div>
-</nav> -->
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>    
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li class="navbar-left"><a href="#">Left 1</a></li>
-      <li class="navbar-left"><a href="#">Left 2</a></li>
-      <li class="active"><a href="#">Center 1</a></li>
-      <li><a href="#">Center 2</a></li>
-      <li><a href="#">Center 3</a></li>
-      <li class="navbar-right"><a href="#">Right 2</a></li>
-      <li class="navbar-right"><a href="#">Right 1</a></li>
-    </ul>
-  </div>
 </nav>
+
 		<div class="fb_div">
 			<a class="fbbutton" title="follow me on facebook" href="https://www.facebook.com/blossomnailsintroy">{% load staticfiles %}<img src="{% static 'fb_logo.png' %}"></a>
 		</div>
