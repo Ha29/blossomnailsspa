@@ -42,7 +42,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="nav navbar-nav navbar-left">
       <li class="nav-item">
         <a class="nav-link" href="/home/">Home </a>
       </li>
@@ -58,6 +58,14 @@
       <li class="nav-item justify-content-end">
         <a class="nav-link" href="/contact/">Contact</a>
       </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+    	<li class = "nav-item">
+			<a class="fbbutton" title="follow us on facebook" href="https://www.facebook.com/blossomnailsintroy">
+				{% load staticfiles %}
+				<img src="{% static 'fb_logo.png' %}"></a>
+    	</li>
     </ul>
   </div>
 </nav>
