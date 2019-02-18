@@ -40,27 +40,7 @@
                   <!--Grid column-->
                 </div>
     		</div>
-    		<div id="carousel">
-    			
-    			{% for src_name in src_names %}
-    			{% load staticfiles %}
-    			<img class="caro-image" 
-    			src={% static src_name %}> 
-    			{% endfor %}
-    			<button class="left-button" onclick="changeImage(-1)">&#10094;</button>
-    			<button class="right-button" onclick="changeImage(1)"> &#10095;</button>
-    			
-    		</div>
-    		<div id = "contents">
-    			{% for index, line in contents %}
-    			<p id={{index}}>
-    				{{line}}
-    			</p>
-    			{% endfor %}
-    		</div>
-    		<span class="yelp-review" data-review-id="JmE2b2ilz4g2L0djp8L2Nw" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=w8Alma0D7oIRrmpr2yJWuQ" rel="nofollow noopener">Kesha D.</a>'s <a href="https://www.yelp.com/biz/blossom-nails-and-spa-troy?hrid=JmE2b2ilz4g2L0djp8L2Nw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/rKdz4uj59uPiJ9Ycn4N6IQ" rel="nofollow noopener">Blossom Nails and Spa</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.com/embed/widgets.js" type="text/javascript"></script></span>
     	</div>
-    </div>
 
 
 	<!-- <style> 
