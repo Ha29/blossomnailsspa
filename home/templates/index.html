@@ -19,12 +19,9 @@
 	</title>
 </head>
 
-<body onload=slide()>
-    <div id="relative"> 
-    	<div id="background">
-
-    	</div>
-    	<div id="body-contents">
+<body>
+    <div class="view" style="background-image: url('{% static 'home/images/blossoms.jpg''}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    	<div class="mask rgba-black-light align-items-center">
     		<div class="container">
     			<p id="title"> Blossom Nails & Spa </p>
     			<p id="description"> The Perfect Nails Spa in Troy </p>
@@ -55,7 +52,7 @@
     </div>
 
 
-	<style> 
+	<!-- <style> 
 		#background {
 			background-image:url("{% static 'home/images/blossoms.jpg'%}");
 			opacity: 0.5;
@@ -66,7 +63,7 @@
 			min-height: 200vh;
 			margin: 0 ;
 		}
-	</style>
+	</style> -->
 </body>
 <script>
 var slideIndex = 0;
