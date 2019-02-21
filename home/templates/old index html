@@ -1,35 +1,59 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static '/home/index.css' %}" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 {% include "menu.html" %}
 
+<!doctype html>
 <html>
 
+
 <head>
-	<!-- {% block extrahead %} -->
-		<!-- <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" /> -->
-	<!-- {% endblock %} -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>
 		Blossom Nails Spa Home
 	</title>
 </head>
 
-<body>
-	<!-- <div style="position:relative; ">      
-      <div style=" background-image:url("{% static 'home/images/blossoms.jpg'%}"); opacity:0.5; filter:alpha(opacity=40);height:520px; width:520px;"></div>
-
-       <div style="position:absolute; top:10px; z-index:100;left:10px;height:500px;width:500px;">
-            Your Div Contents are  Here..................
-       </div>
-    </div> -->
+<body onload=slide()>
     <div id="relative"> 
     	<div id="background">
 
     	</div>
     	<div id="body-contents">
-    		<h1> WELCOME </h1>
+    		<div class="container">
+    			<p id="title"> Blossom Nails & Spa </p>
+    			<p id="description"> The Perfect Nails Spa in Troy </p>
+    			<p id="number"> Call Today: 248-817-6663 </p>
+    			<p id="message"> Appointment Preferred </h1>
+    			<p id = "message"> Walk-Ins Welcome!!!</h1>
+    		</div>
+    		<div id="carousel">
+    			
+    			{% for src_name in src_names %}
+    			{% load staticfiles %}
+    			<img class="caro-image" 
+    			src={% static src_name %}> 
+    			{% endfor %}
+    			<button class="left-button" onclick="changeImage(-1)">&#10094;</button>
+    			<button class="right-button" onclick="changeImage(1)"> &#10095;</button>
+    			
+    		</div>
+    		<div id = "contents">
+    			{% for index, line in contents %}
+    			<p id={{index}}>
+    				{{line}}
+    			</p>
+    			{% endfor %}
+    		</div>
+    		<span class="yelp-review" data-review-id="JmE2b2ilz4g2L0djp8L2Nw" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=w8Alma0D7oIRrmpr2yJWuQ" rel="nofollow noopener">Kesha D.</a>'s <a href="https://www.yelp.com/biz/blossom-nails-and-spa-troy?hrid=JmE2b2ilz4g2L0djp8L2Nw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/rKdz4uj59uPiJ9Ycn4N6IQ" rel="nofollow noopener">Blossom Nails and Spa</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.com/embed/widgets.js" type="text/javascript"></script></span>
     	</div>
     </div>
+
 
 	<style> 
 		#background {
@@ -39,10 +63,60 @@
 			height: 100%;
 			background-size:cover;
 			background-attachment: fixed;
-			min-height: 150vh;
+			min-height: 200vh;
+			margin: 0 ;
 		}
 	</style>
 </body>
+<script>
+var slideIndex = 0;
+var slides = document.getElementsByClassName("caro-image")
+var automatic;
+var timer;
+var debugging_clock = setInterval(print, 1000)
+automate();
+
+function slide() {
+	var i;
+	clearImages();
+	slideIndex++;
+	displayImage();
+};
+
+function clearImages() {
+	var slides = document.getElementsByClassName("caro-image")
+	for (i=0; i < slides.length; i++){
+		slides[i].style.display = "none"
+	}
+}
+
+function displayImage() {
+	if (slideIndex > slides.length) { slideIndex = 1}
+	if (slideIndex < 1) { slideIndex = 17}
+	slides[slideIndex-1].style.display= "block"
+	// console.log(slideIndex-1);
+}
+
+function automate() {
+	automatic = setInterval(slide, 3000);
+}
+
+function print() {
+	console.log("a second has passed by");
+}
+
+function changeImage(i) {
+	clearTimeout(timer);
+	clearInterval(automatic);
+	slideIndex += i;
+	clearImages();
+	displayImage();
+	timer = setTimeout(automate, 5000);
+}
+
+
+
+</script>
 
 </html>
 
