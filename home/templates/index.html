@@ -49,6 +49,9 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
           </li>
         </ul>
@@ -62,9 +65,9 @@
       <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'home/img/profile.png' %}" alt="">
       <h1 class="text-uppercase mb-0">Blossom Nails Spa</h1>
       <hr class="star-light">
-      <h2 class="font-weight-light mb-0">The Perfect Nails Spa in Troy</h2>
-      <h2 class="font-weight-light mb-0">Appointments Preferred</h2>
-      <h2 class="font-weight-light mb-0">Walk-Ins Welcome!!!</h2>
+      <h2 class="font-weight-light mb-0" style="padding-bottom: 10px">The Perfect Nails Spa in Troy</h2>
+      <h2 class="font-weight-light mb-0" style="padding-bottom: 10px">Appointments Preferred</h2>
+      <h2 class="font-weight-light mb-0" style="padding-bottom: 10px">Walk-Ins Welcome!!!</h2>
       <a class="btn btn-xl btn-outline-light" href="tel: +2488176663">
           Call To Make an Appointment
         </a>
@@ -96,7 +99,8 @@
     <div class="container">
       <h2 class="text-center text-uppercase text-white">We've Arrived.</h2>
       <hr class="star-light mb-5">
-      <h2 class="font-weight-light style="padding-bottom:30px" mb-0">Troy's Whole New Care Experience</h2>
+      <h2 class="font-weight-light text-center mb-0" style="padding-bottom:30px">
+      	Troy's Whole New Care Experience</h2>
       <div class="row">
         <div class="col-lg-4 ml-auto">
           <p class="lead">Located in Long Lake Plaza, a prominent and well-known shopping center offers easy access and ample parking in a relaxed atmosphere, rated #1 shopping center in Troy over 30 years.  With a focus on quality and service, Blossom Nails & Spa offer manicure, pedicure and waxing packages in our brand-new spacious spa facility.</p>
@@ -111,6 +115,26 @@
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- Services -->
+  <section class="portfolio" id="services">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Gallery</h2>
+      <hr class="star-dark mb-5">
+        	<!-- start my code gallery-->
+
+		<div class="gallery" id="gallery">
+
+			{% for src_name in src_names %}
+			<div class = "mb-3 pics animation all 1">
+				<img class = "img-fluid" src = {% static src_name %} alt = "Card image cap">
+			</div>
+			{% endfor %}
+  		<!-- close gallery -->
+		</div>
+	<!-- close container -->
+	</div>
   </section>
 
   <!-- Contact Section -->
