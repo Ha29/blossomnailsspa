@@ -1,39 +1,51 @@
 // Bootstrap overrides for this template
-.bg-primary {
-    background: $theme-primary;
-    background: -webkit-linear-gradient($theme-primary, darken($theme-primary, 5%));
-    background: linear-gradient($theme-primary, darken($theme-primary, 5%));
-}
-
-.text-primary {
-    color: $theme-primary;
-}
-
-.no-gutter > [class*='col-'] {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.btn-outline {
-    color: white;
-    border: 1px solid;
-    border-color: white;
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-        color: white;
-        border-color: $theme-primary;
-        background-color: $theme-primary;
-    }
+a {
+  color: $primary;
+  &:focus,
+  &:hover,
+  &:active {
+    color: darken($primary, 10%);
+  }
 }
 
 .btn {
-    border-radius: 300px;
-    @include alt-font;
+  border-width: 2px;
 }
 
-.btn-xl {
-    font-size: 11px;
-    padding: 15px 45px;
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-secondary {
+  color: $secondary !important;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($secondary, 10%);
+    border-color: darken($secondary, 10%);
+  }
 }
