@@ -50,10 +50,10 @@ def index(request):
 			{'src_names': names, 'contents': list_data, \
 			'accepted': 0})
 
-# def services(request):
-# 	list_data = get_data_in_list('static/services.json')
-# 	return render(request, 'services.html', \
-# 		{'contents': list_data})
+def services(request):
+	list_data = get_data_in_list('static/services.json')
+	return render(request, 'services.html', \
+		{'contents': list_data})
 
 
 	
