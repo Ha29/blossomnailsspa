@@ -18,34 +18,37 @@ def index(request):
 		string = 'home/images/' + str(i) + '.jpg'
 		names.append(string)
 	list_data = get_data_in_list('static/home.json')
-	if request.method == 'POST':
-		print("post-request")
-		form = ContactForm(request.POST)
-		if form.is_valid():
-			print("valid!")
-			fn = request.POST.get('fn')
-			ln = request.POST.get('ln')
-			email = request.POST.get('email')
-			content = request.POST.get('content')
-			try:
-				person = Person.objects.get(pk=email)
-				person.first_name = fn
-				person.last_name = ln
-			except (Person.DoesNotExist, ProgrammingError) as error:
-				person = Person(first_name=fn, last_name=ln, email=email)
-			person.save()
-			suggestion = PrivateSuggestion(suggestion=content, 
-				pub_date=datetime.datetime.now(), person=person)
-			suggestion.save()
-			new_form = ContactForm()
-			return render(request, 'index.html', \
-				{'src_names': names, 'contents': list_data, \
-				'form': new_form, 'accepted':1})
-	else:
-		form = ContactForm()
+	# if request.method == 'POST':
+	# 	print("post-request")
+	# 	form = ContactForm(request.POST)
+	# 	if form.is_valid():
+	# 		print("valid!")
+	# 		fn = request.POST.get('fn')
+	# 		ln = request.POST.get('ln')
+	# 		email = request.POST.get('email')
+	# 		content = request.POST.get('content')
+	# 		try:
+	# 			person = Person.objects.get(pk=email)
+	# 			person.first_name = fn
+	# 			person.last_name = ln
+	# 		except (Person.DoesNotExist, ProgrammingError) as error:
+	# 			person = Person(first_name=fn, last_name=ln, email=email)
+	# 		person.save()
+	# 		suggestion = PrivateSuggestion(suggestion=content, 
+	# 			pub_date=datetime.datetime.now(), person=person)
+	# 		suggestion.save()
+	# 		new_form = ContactForm()
+	# 		return render(request, 'index.html', \
+	# 			{'src_names': names, 'contents': list_data, \
+	# 			'form': new_form, 'accepted':1})
+	# else:
+	# 	form = ContactForm()
+	# return render(request, 'index.html', \
+	# 		{'src_names': names, 'contents': list_data, \
+	# 		'form': form, 'accepted': 0})
 	return render(request, 'index.html', \
 			{'src_names': names, 'contents': list_data, \
-			'form': form, 'accepted': 0})
+			'accepted': 0})
 
 # def services(request):
 # 	list_data = get_data_in_list('static/services.json')
