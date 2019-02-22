@@ -26,6 +26,14 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'home/css/freelancer.min.css' %}" rel="stylesheet">
 
+  <style>
+ 	<span class="metadata-marker" style="display: none;" data-region_tag="css"></span>      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -365,6 +373,7 @@
     <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">Contact Us</h2>
       <hr class="star-dark mb-5">
+      <span class="metadata-marker" style="display: none;" data-region_tag="script-body"></span>
       <div id="map"></div>
 		<script>
 		function initMap() {
