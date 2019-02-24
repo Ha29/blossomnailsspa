@@ -396,13 +396,15 @@
 		src = "https://maps.googleapis.com/maps/api/
 		js?key=AIzaSyCpnTbmTiwyKVdXdxJwP02Vw6T3ll-F2EM&callback=initMap">
 		</script>
+
       <div class="row">
         <div class="col-lg-8 mx-auto">
+        	{% load crispy_forms_tags %}
         	<form method="post" action="">
 				{% csrf_token %}
 				<div class= "formFields">
 					<div class="form-group">
-						{{ form.as_p }}
+						{{ form|crispy }}
 						<input type="submit" value="Submit" />
 					</div>
 				</div>
