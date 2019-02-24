@@ -11,3 +11,4 @@ python_version = "3.6.6"
 [packages]
 django-heroku = "*"
 django_extensions = "*"
+django_crispy_forms = "*"
