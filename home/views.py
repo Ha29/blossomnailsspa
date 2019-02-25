@@ -23,8 +23,8 @@ def index(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			print("valid!")
-			fn = request.POST.get('fn')
-			ln = request.POST.get('ln')
+			fn = request.POST.get('first_name')
+			ln = request.POST.get('last_name')
 			email = request.POST.get('email')
 			content = request.POST.get('content')
 			try:

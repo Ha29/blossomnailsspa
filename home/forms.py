@@ -4,10 +4,10 @@ from django.core.exceptions import ValidationError
 from .models import Person
 
 class ContactForm(forms.Form):
-	fn = forms.CharField(required=True, max_length=20, 
+	first_name = forms.CharField(required=True, max_length=20, 
 		widget=forms.TextInput(\
 			attrs={'placeholder': 'First Name', 'class': 'form'}))
-	ln = forms.CharField(required=True, max_length=20, 
+	last_name = forms.CharField(required=True, max_length=20, 
 		widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
 	email = forms.EmailField(required=True, max_length=254, 
 		widget=forms.EmailInput(
